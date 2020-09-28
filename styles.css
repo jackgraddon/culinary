@@ -1,7 +1,3 @@
-@import "root.css";
-@import "animationControllers.css";
-@import "menutoggle.css";
-
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #26292c !important;

@@ -37,20 +37,19 @@
     <main class="container">
 
         <div class="d-lg-flex justify-content-lg-center mb-5">
-            <img src="./images/promo1.jpg" class="mr-1 w-50">
-            <div class="d-flex flex-column">
-                <div class="jumbotron ml-1 w-100">
+            <img src="./images/promo1.jpg" class="mr-1 w-50 flex-fill" id="column1" alt="Cookies promo">
+            <div class="d-flex flex-column w-100 flex-fill ml-1" id="column2">
+                <div class="jumbotron w-100">
                     <h1>Culinary Arts</h1>
                     <p class="lead mb-1 mt-1">Jack Graddon</p>
                     <p>A website to host all of the Culinary Projects for easy viewing.</p>
                     <a class="btn btn-primary" href="./weeks/">View Projects</a>
                 </div>
-                <img src="./images/promo2.jpg" class="ml-1 w-100">
+                <img src="./images/promo2.jpg" class="w-100">
             </div>
 
         </div>
     </main>
-    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -61,6 +60,32 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+    <!-- JavaScript -->
+    <script>
+        function resizePromo() {
+            if ($(window).width() < 992) {
+                $('img#column1').removeClass('w-50');
+                $('img#column1').addClass('w-100');
+                $('img#column1').addClass('mb-4');
+
+                $('div#column2').removeClass('ml-1');
+            }
+            else {
+                $('img#column1').removeClass('w-100');
+                $('img#column1').removeClass('mb-4');
+                $('img#column1').addClass('w-50');
+
+                $('div#column2').addClass('ml-1');
+            }
+        }
+
+        resizePromo()
+
+        $(window).resize(function () {
+            resizePromo();
+        });
+    </script>
 </body>
 
 </html>
