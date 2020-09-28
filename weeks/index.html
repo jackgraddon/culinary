@@ -39,10 +39,11 @@
             <h1>Culinary Arts - Weeks</h1>
             <p class="lead mb-1 mt-1">Jack Graddon</p>
             <p>Viewing all weekly projects.</p>
+            <a class="hidden btn btn-primary" href="#week2">Jump to Latest</a>
         </div>
 
         <div class="card-columns">
-            <div class="card">
+            <div class="card" id="week1">
                 <img class="card-img-top" src="./images/cookies.jpg" alt="Week One Image">
                 <div class="card-body">
                     <h4 class="card-title">Cookies</h4>
@@ -53,7 +54,7 @@
                     <a href="./cookies/" class="btn btn-primary">See the Project</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="week2">
                 <img class="card-img-top" src="./images/quickbread.jpg" alt="Week Two Image">
                 <div class="card-body">
                     <h4 class="card-title">Quick Breads</h4>
@@ -62,6 +63,17 @@
                         Chocolate Chips mixed in.
                     </p>
                     <a href="./quickbread/" class="btn btn-primary">See the Project</a>
+                </div>
+            </div>
+            <div class="card">
+                <!-- <img class="card-img-top" src="" alt="Week Three Image"> -->
+                <div class="card-body">
+                    <h4 class="card-title">Yeast Breads</h4>
+                    <p class="card-text">
+                        In <span class="text-info">Week Three</span>, we will be making Yeast Breads. Come back next
+                        week to see the results!
+                    </p>
+                    <a href="#!" class="btn btn-primary disabled">See the Project</a>
                 </div>
             </div>
             <!-- <div class="card">
@@ -77,7 +89,6 @@
             </div> -->
         </div>
     </main>
-    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -88,6 +99,32 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+    <!-- JavaScript -->
+    <script>
+        function resizePromo() {
+            if ($(window).width() < 992) {
+                $('img#column1').removeClass('w-50');
+                $('img#column1').addClass('w-100');
+                $('img#column1').addClass('mb-4');
+
+                $('div#column2').removeClass('ml-1');
+            }
+            else {
+                $('img#column1').removeClass('w-100');
+                $('img#column1').removeClass('mb-4');
+                $('img#column1').addClass('w-50');
+
+                $('div#column2').addClass('ml-1');
+            }
+        }
+
+        resizePromo()
+
+        $(window).resize(function () {
+            resizePromo();
+        });
+    </script>
 </body>
 
 </html>
